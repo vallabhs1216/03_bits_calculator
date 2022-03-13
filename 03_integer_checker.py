@@ -10,12 +10,15 @@ def num_check (question, low):
         "(or equal to) {}".format(low)
 
         try:
-
+            
+            # ask user to enter number
             response = int(input(question))
 
+            # checks number is more than zero
             if response > low:
                 return response
             
+            # output error if input is invalid
             else:
                 print(error)
                 print()
