@@ -99,12 +99,13 @@ while keep_going == "":
     if data_type =="integer":
         var_integer = num_check("Enter an integer ", 0)
 
-    # (must be an interger more than / equal to 0)
+    # For images, ask for width and height
+    # (must be integers more than / equal to 1)
     elif data_type == "image":
-        image_width = num_check("Image width? ",1)
+        image_width = num_check("Image width? ", 1)
         print()
         image_height = num_check("Image height? ", 1)
 
-    # For images, ask for width and height
-    # (must be integers more than / equal to 1)
-    elif data_type == 
+    # For text, ask for a string
+    else:
+        var_text = input("Enter some text. ")
