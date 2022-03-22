@@ -28,11 +28,11 @@ def num_check (question, low):
 def image_bits():
 
     # get width and height...
-    image_width = num_check("Image width")
-    image_height = num_check("Image height")
+    image_width = num_check("Image width: ", 1)
+    image_height = num_check("Image height: ", 1)
 
     # calculate # of pixels
-    num_pixels = image_width * 24
+    num_pixels = image_width * image_height
 
     # calculate # bits (24 x num pixels)
     num_bits = num_pixels * 24

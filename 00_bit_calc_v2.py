@@ -1,18 +1,42 @@
 # Funtion goes here
 
 # Puts series of symbols at start and end of text (for emphasis)
-def statement_generator(text, decoration):
+def statement_generator(text, decoration, style):
     
     # Make string with five characters
     ends = decoration * 5
 
     # add decoration to start and end of statement
     statement = "{}  {}  {}".format(ends, text, ends)
+    top_bottom = decoration * len(statement)
 
-    print()
-    print(statement)
-    print()
+    if style == 1:
 
+        print()
+        print(statement)
+        print()
+
+    else:
+        print()
+        print(top_bottom)
+        print(statement)
+        print(top_bottom)
+        
+
+    return ""
+
+
+# displays instructions / information
+def instructions():
+
+    statement_generator("Instructions / Information", "=", 3)
+    print()
+    print("Please choose a data type (image / text / integer)")
+    print()
+    print("This program asumes that images are being represented in 24 bit colour (ie: 24 bits per pixel). For text, we assume that ascii encoding is being used (8 btis per character)." ) 
+    print()
+    print("Complete as many calculations as necessary, pressing <enter> at the end of each calculation or any key to quit.")
+    print()
     return ""
 
 
@@ -152,11 +176,14 @@ def int_bits():
 
 
 # Heading
-statement_generator("Bit Calculator for Integers, Text & Images", "-")
+statement_generator("Bit Calculator for Integers, Text & Images", "-", 3)
 
 
 # Display instructions if user has not used the program before
+first_time = input("Press <enter> to see the instructions or any key to continue: ")
 
+if first_time == "":
+    instructions()
 
 
 # Loop to allow multiple calculations per session
@@ -165,7 +192,8 @@ while keep_going == "":
 
     # Ask the user for file type
     data_type = user_choice()
-    print("You chose", data_type)
+    heading = "You chose {}".format(data_type)
+    statement_generator(heading, "*", 1)
 
     # For integers, ask for integer
     if data_type == "integer":

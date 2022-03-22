@@ -30,7 +30,7 @@ def int_bits():
     var_integer = num_check("Please enter an integer: ", 0)
 
     # source for code is below
-
+    # https://stackoverflow.com/questions/699866/python-int-to-binary-string
 
     var_binary = "{0:b}".format(var_integer)
 
@@ -40,4 +40,10 @@ def int_bits():
      # output answer with working 
     print()
     print("{} is binary is {}".format(var_integer, var_integer))
-    print(""
+    print("# of bits is {}".format(num_bits))
+
+    return ""
+
+# Main routine
+
+int_bits
